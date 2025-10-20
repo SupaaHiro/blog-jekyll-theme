@@ -1,0 +1,22 @@
+---
+layout: base
+permalink: /404.html
+---
+<section>
+  <div class="container py-5 min-vh-100 d-flex flex-column">
+    <div class="row notfound-page">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="fw-semibold my-5">{{ page.title }}</h2>
+        <p class="text-muted fs-lg mb-4">
+          {{ page.http_error }}
+        </p>
+        <div class="image-container">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}" loading="eager" />
+        </div>
+        <a href="{{ '/' | relative_url }}" class="btn btn-primary btn-lg my-5" aria-label="Return to Homepage">
+          Back to Homepage
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

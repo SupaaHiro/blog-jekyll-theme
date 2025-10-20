@@ -3,7 +3,12 @@ layout: base
 ---
 <article class="py-3">
   <div class="container">
-    <h2 class="mb-4 text-center fw-semibold">Recent Articles</h2>
+    <header class="mb-5 text-center">
+      <h1 class="article-title fw-bold mb-3">Recent Articles</h1>
+      <div class="article-meta text-muted">
+        <span>Recent published articles ({{ site.time | date: "%B %d, %Y" }})</span>
+      </div>
+    </header>
 
     {% assign recent_posts = site.posts | slice: 0,6 %}
     {% if recent_posts.size > 0 %}
