@@ -1,0 +1,25 @@
+/* Boostrap overwrites */
+:root {
+  --bs-bg-primary: var(--clr-bg-primary);
+  --bs-bg-secondary: var(--clr-bg-secondary);
+  --bs-bg-tertiary: var(--clr-bg-tertiary);
+
+  --bs-body-bg: var(--clr-bg-secondary);
+
+  --bs-info-text-emphasis: var(--clr-neutral);
+  --bs-info-bg-subtle: var(--clr-bg-primary);
+
+  --mat-dialog-container-color: var(--clr-bg-secondary);
+}
+
+.bg-primary {
+  background-color: var(--clr-bg-primary) !important;
+}
+
+.bg-secondary {
+  background-color: var(--clr-bg-secondary) !important;
+}
+
+.bg-tertiary {
+  background-color: var(--clr-bg-tertiary) !important;
+}

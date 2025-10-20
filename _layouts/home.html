@@ -1,0 +1,43 @@
+---
+layout: base
+---
+<article class="py-3">
+  <div class="container">
+    <h2 class="mb-4 text-center fw-semibold">Recent Articles</h2>
+
+    {% assign recent_posts = site.posts | slice: 0,6 %}
+    {% if recent_posts.size > 0 %}
+    <div class="card-container">
+      {% for post in recent_posts %}
+      <div class="card h-100">
+        {% if post.image %}
+        <div class="card-img-wrapper position-relative">
+          <img src="{{ post.image }}" alt="{{ post.title }}" class="card-img-top" loading="lazy" />
+          <span class="badge bg-primary position-absolute top-0 end-0 m-2">
+            {{ post.date | date: "%b %d, %Y" }}
+          </span>
+        </div>
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h3 class="card-title fs-5 fw-semibold">{{ post.title }}</h3>
+          {% if post.summary %}
+          <p class="card-text text-muted flex-grow-1 my-3">{{ post.summary }}</p>
+          {% endif %}
+          {% if post.link %}
+          <a href="{{ post.link | relative_url }}" class="btn btn-outline-primary stretched-link">
+            Read Now
+          </a>
+          {% else %}
+          <a href="{{ post.url | relative_url }}" class="btn btn-outline-primary stretched-link">
+            Read Now
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-muted text-center mb-5">There are no posts published yet.</p>
+    {% endif %}
+  </div>
+</article>

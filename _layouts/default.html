@@ -1,38 +1,33 @@
-<!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
+---
+layout: base
+---
+<section class="article-page py-3 d-flex" id="article-page">
+  <div class="container">
+    <article class="row">
+      <div class="col-lg-12">
+        {% if page.title %}
+        <header class="mb-5 text-center">
+          <h1 class="article-title fw-bold mb-3">{{ page.title }}</h1>
+          <div class="article-meta text-muted">
+            <span>Published on {{ page.date | date: "%B %d, %Y" }}</span>
+            <span class="mx-2">•</span>
+            <span>By {{ page.author }}</span>
+          </div>
+        </header>
+        {% endif %}
 
-{% seo %}
-  </head>
+        {% if page.image %}
+        <div class="preview-image mb-5">
+          <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid rounded shadow-sm" loading="eager" />
+        </div>
+        {% endif %}
 
-  <body>
-
-    <header>
-      <div class="container">
-        <a id="a-title" href="{{ '/' | relative_url }}">
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-        </a>
-        <h2>{{ site.description | default: site.github.project_tagline }}</h2>
-
-        <section id="downloads">
-          {% if site.show_downloads %}
-            <a href="{{ site.github.zip_url }}" class="btn">Download as .zip</a>
-            <a href="{{ site.github.tar_url }}" class="btn">Download as .tar.gz</a>
-          {% endif %}
-          <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
+        <div class="article-content">
+          <div class="markdown-body">
+            {{ content }}
+          </div>
+        </div>
       </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        {{ content }}
-      </section>
-    </div>
-  </body>
-</html>
+    </article>
+  </div>
+</section>

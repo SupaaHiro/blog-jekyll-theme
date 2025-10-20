@@ -1,0 +1,151 @@
+/*
+  Design System:
+  - Font: Inter (400, 600, 700)
+  - Color Palette (Light Theme):
+    --clr-primary:       #0052CC (Sapphire)
+    --clr-secondary:     #28c2ff (Deep Sky Blue)
+    --clr-tertiary:      #96adc8 (Powder Blue)
+    --clr-neutral:       #2D3748 (Charcoal)
+    --clr-neutral-light: #a0aec0 (Cadet Gray)
+    --clr-error:         #941C2F (Burgundy)
+    --clr-accent:        #FFB900 (Selective Yellow)
+    --clr-white:         #e2e8f0 (Alice Blue)
+    --clr-bg-primary:    #ccdcf5 (Lavender)
+    --clr-bg-secondary:  #edf2f7 (Alice Blue)
+    --clr-bg-tertiary:   #f7fafc (Seasalt)
+
+  
+  - Color Palette (Dark Theme):
+    --clr-primary:       #0052CC (Cornflower Blue)
+    --clr-secondary:     #28c2ff (Deep Sky Blue)
+    --clr-tertiary:      #96adc8 (Powder Blue)
+    --clr-neutral:       #E2E8F0 (Alice Blue)
+    --clr-neutral-light: #a0aec0 (Cadet Gray)
+    --clr-error:         #941C2F (Burgundy)
+    --clr-accent:        #FFB900 (Selective Yellow)
+    --clr-white:         #e2e8f0 (Alice Blue)
+    --clr-bg-primary:    #2d3748 (Charcoal)
+    --clr-bg-secondary:  #171923 (Rasin Black)
+    --clr-bg-tertiary:   #1a202c (Rasin Black)
+
+  - Spacing: Modular system (0.5rem, 1rem, 1.5rem, etc.)
+  - Animations: Subtle, based on transform and opacity
+  - Accessibility: WCAG 2.1 AA contrast, visible focus
+*/
+
+/* Global Variables */
+:root {
+  /* Font Sizes */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-base: 1rem; /* 16px */
+  --fs-lg: 1.125rem; /* 18px */
+  --fs-xl: 1.5rem; /* 24px */
+  --fs-h2: 2rem; /* 32px */
+  --fs-display: 3rem; /* 48px */
+
+  /* Font Weights */
+  --fw-regular: 400;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+  /* Main element adjusted for header and footer height */
+  --main-height-adjusted: calc(100vh - 58px - 380px);
+
+  /* Breakpoints */
+  --breakpoint-xl: 1400px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-md: 992px;
+  --breakpoint-sm: 768px;
+  --breakpoint-xs: 576px;
+}
+
+/* Colors (Light Theme) */
+[data-bs-theme="auto"],
+[data-bs-theme="light"] {
+  --clr-primary: #0052cc;
+  --clr-secondary: #28c2ff;
+  --clr-tertiary: #96adc8;
+  --clr-neutral: #2d3748;
+  --clr-neutral-light: #a0aec0;
+  --clr-error: #941c2f;
+  --clr-accent: #ffb900;
+  --clr-white: #e2e8f0;
+
+  --clr-bg-primary: #ccdcf5;
+  --clr-bg-secondary: #edf2f7;
+  --clr-bg-tertiary: #f7fafc;
+
+  --topbar-logo: url(/assets/favicon/light/android-chrome-512x512.png);
+}
+
+/* Colors (Dark Theme) */
+[data-bs-theme="dark"] {
+  --clr-primary: #6697e0;
+  --clr-secondary: #28c2ff;
+  --clr-tertiary: #96adc8;
+  --clr-neutral: #e2e8f0;
+  --clr-neutral-light: #718096;
+  --clr-error: #941c2f;
+  --clr-accent: #ffb900;
+  --clr-white: #e2e8f0;
+
+  --clr-bg-primary: #2d3748;
+  --clr-bg-secondary: #212529;
+  --clr-bg-tertiary: #1a202c;
+
+  --topbar-logo: url(/assets/favicon/light/android-chrome-512x512.png);
+}
+
+/* Reset and Base */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-base);
+  line-height: 1.6;
+}
+
+/* Accessibility */
+.visually-hidden-focusable {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+:focus-visible {
+  outline: 3px solid var(--clr-primary);
+  outline-offset: 2px;
+}
