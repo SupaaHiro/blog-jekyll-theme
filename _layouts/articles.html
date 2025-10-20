@@ -1,0 +1,61 @@
+---
+layout: base
+---
+<section class="article-page py-3 d-flex" id="article-page">
+  <div class="container">
+    <article class="row">
+      <div class="col-lg-12">
+        {% if page.title %}
+        <header class="mb-5 text-center">
+          <h1 class="article-title fw-bold mb-3">{{ page.title }}</h1>
+          <div class="article-meta text-muted">
+            <span>Published on {{ page.date | date: "%B %d, %Y" }}</span>
+            <span class="mx-2">•</span>
+            <span>By {{ page.author }}</span>
+          </div>
+        </header>
+        {% endif %}
+
+        {% if page.image %}
+        <div class="preview-image mb-5">
+          <img src="{{ page.image }}" alt="{{ page.title }}" class="img-fluid rounded shadow-sm" loading="eager" />
+        </div>
+        {% endif %}
+
+        <div class="article-content">
+          {% assign all_posts = site.posts %}
+          {% if all_posts.size > 0 %}
+          <ul class="list-unstyled">
+            {% for post in all_posts %}
+            <li class="mb-4 pb-3 border-bottom">
+              <h3 class="fs-5 mb-1">
+                <a href="{{ post.url | relative_url }}" class="text-decoration-none text-primary">
+                  {{ post.title }}
+                </a>
+              </h3>
+              <small class="text-muted d-block mb-2">
+                {{ post.date | date: "%B %d, %Y" }}
+              </small>
+              {% if post.summary %}
+              <p class="text-muted mb-2">{{ post.summary }}</p>
+              {% endif %}
+              {% if post.link %}
+              <a href="{{ post.link | relative_url }}" class="btn btn-sm btn-outline-primary">
+                Read More →
+              </a>
+              {% else %}
+              <a href="{{ post.url | relative_url }}" class="btn btn-sm btn-outline-primary">
+                Read More →
+              </a>
+              {% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="text-muted text-center mb-5">There are no posts published yet.</p>
+          {% endif %}
+        </div>
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+@import "global_reset";
+@import "global_styles";
+@import "global_overrides";
+@import "blog-card";
+@import "blog-article";
+@import "markdown-styles";
+
+/* Main Wrapper */
+.main-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: var(--clr-bg-tertiary);
+  box-shadow: var(--shadow-sm);
+  border-radius: 8px;
+}
+
+main {
+  flex: 1;
+  min-height: calc(var(--main-height-adjusted));
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-semibold);
+}
+
+p {
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+}
+
+.card {
+  background-color: var(--clr-bg-primary);
+}
+
+.card input,
+.card textarea {
+  background-color: var(--clr-bg-tertiary);
+}
+
+[data-bs-theme="dark"] input,
+[data-bs-theme="dark"] textarea {
+  color: var(--clr-neutral);
+  border-color: var(--clr-neutral-light);
+}
+
+.form-label,
+.form-control {
+  font-size: var(--fs-lg);
+}
+
+.clr-bg-primary {
+  background-color: var(--clr-bg-primary);
+}
+
+.clr-bg-secondary {
+  background-color: var(--clr-bg-secondary);
+}
+
+.clr-bg-tertiary {
+  background-color: var(--clr-bg-tertiary);
+}

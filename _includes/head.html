@@ -1,0 +1,9 @@
+<!-- Mermaid.js for diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+  document.querySelectorAll('code.language-mermaid').forEach((codeEl) => {
+    codeEl.classList.add('mermaid');
+  });
+  mermaid.run();
+</script>
