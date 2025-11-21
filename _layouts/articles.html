@@ -29,9 +29,15 @@ layout: base
             {% for post in all_posts %}
             <li class="mb-4 pb-3 border-bottom">
               <h3 class="fs-5 mb-1">
+                {% if post.link %}
+                <a href="{{ post.link | relative_url }}" class="text-decoration-none text-primary">
+                  {{ post.title }}
+                </a>
+                {% else %}
                 <a href="{{ post.url | relative_url }}" class="text-decoration-none text-primary">
                   {{ post.title }}
                 </a>
+                {% endif %}
               </h3>
               <small class="text-muted d-block mb-2">
                 {{ post.date | date: "%B %d, %Y" }}
